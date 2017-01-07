@@ -1,0 +1,23 @@
+---
+title: "Exploring the Incident data"
+author: "Thijs Leufkens"
+date: "7 januari 2017"
+output: html_document
+---
+
+```{r loaddata}
+incident <- read.csv("incidentdata_kaggle.csv")
+```
+
+```{r plotshots}
+library(tidyverse)
+onlyshots <- filter(incident, super_type == "shots")
+ggplot(data = onlyshots, mapping = aes(x = lon, y = lat, colour = type)) + 
+  geom_point()
+```
+
+```{r plotpenalty}
+penalty <- filter(incident, subtype1 == "penalty")
+ggplot(data = penalty, mapping = aes(x = lon, y = lat, colour = type)) + 
+  geom_point()
+```
