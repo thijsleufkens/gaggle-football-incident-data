@@ -21,3 +21,16 @@ penalty <- filter(incident, subtype1 == "penalty")
 ggplot(data = penalty, mapping = aes(x = lon, y = lat, colour = type)) + 
   geom_point()
 ```
+
+```{r plotcross}
+penalty <- filter(incident, subtype1 == "cross")
+ggplot(data = penalty, mapping = aes(x = lon, y = lat, colour = type)) + 
+  geom_point()
+```
+
+to do:
+convert lon/lat to 1 half of the field in a new column
+plot data on actual pitch dimensions
+create crude xG model (refine later)
+create xG chart per game (like @11tegen11)
+check the cross data
